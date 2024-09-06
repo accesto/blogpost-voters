@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h2>Board: {{ board.title }}</h2>
+
+  <h4>Actions:</h4>
+  <form method="post" action="{{ path('app_secured_modifyboard', { id: board.id }) }}">
+    <button type="submit">Modify board</button>
+  </form>
+{% endblock %}

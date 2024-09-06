@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h2>List of boards</h2>
+  <p>Boards from database, current user have access to it</p>
+  <ul>
+    {% for board in boards %}
+      <li><a href="{{ path('app_secured_viewboard', { id: board.id }) }}">{{ board.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <p>Additional boards</p>
+  <ul>
+    <li>
+      <a href="{{ path('app_secured_viewboard', { id: '0e3f14dc-3dd8-413c-a7f2-92364b37557c' }) }}">This board does not exist</a>
+      and throws <strong>Not found</strong>
+    </li>
+    <li>
+      <a href="{{ path('app_secured_viewboard', { id: '01fa956e-66c0-4a94-990b-614b27e1b183' }) }}">This board exists but no one have access to it</a>
+      and throws <strong>Access Denied</strong>
+    </li>
+  </ul>
+  <a href="{{ path('app_security_logout') }}">Logout &gt;</a>
+{% endblock%}
