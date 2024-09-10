@@ -2,6 +2,8 @@
 
 This simple app shows how we can handle security with Symfony Security Voter.
 
+[Read full article](https://accesto.com/blog/symfony-voters/)
+
 ### Run this project
 
 ```bash
